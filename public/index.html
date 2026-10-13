@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#761d32" />
+    <meta name="description" content="University of San Carlos announcements and campus notices." />
+    <title>University of San Carlos | Announcements</title>
+    <link rel="stylesheet" href="/styles.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="University of San Carlos announcements home">
+          <span class="brand-mark" aria-hidden="true"><span>USC</span></span>
+          <span class="brand-name"><strong>UNIVERSITY OF SAN CARLOS</strong><small>OFFICIAL ANNOUNCEMENTS</small></span>
+        </a>
+        <span class="topbar-note">CEBU CITY <span aria-hidden="true">·</span> CAMPUS BULLETINS</span>
+      </header>
+
+      <section class="intro" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">UNIVERSITY NOTICES <span aria-hidden="true">·</span> CEBU CITY</p>
+          <h1 id="page-title">Announcements</h1>
+          <p class="intro-copy">Official updates and notices for the USC community.</p>
+        </div>
+        <div class="summary" aria-live="polite">
+          <span class="summary-dot" aria-hidden="true"></span>
+          <span id="active-count">Loading announcements</span>
+        </div>
+      </section>
+
+      <div class="layout">
+        <section class="feed-panel" aria-labelledby="feed-title">
+          <div class="panel-heading">
+            <div>
+              <h2 id="feed-title">All announcements</h2>
+              <p>Updates from across the community</p>
+            </div>
+            <div class="feed-tools">
+              <form id="id-search-form" class="id-search" role="search">
+                <label class="sr-only" for="id-search-input">Search announcement by ID</label>
+                <input id="id-search-input" type="search" placeholder="Search by ID" autocomplete="off" />
+                <button type="submit">Find</button>
+                <button id="clear-search" class="clear-search" type="button" hidden>All</button>
+              </form>
+              <label class="filter-wrap">
+                <span class="sr-only">Filter announcements</span>
+                <select id="status-filter">
+                  <option value="all">All statuses</option>
+                  <option value="ACTIVE">Active</option>
+                  <option value="EXPIRED">Expired</option>
+                </select>
+              </label>
+            </div>
+          </div>
+          <div id="message" class="message" role="status" aria-live="polite"></div>
+          <div id="announcement-list" class="announcement-list" aria-live="polite"></div>
+        </section>
+
+        <aside class="form-panel" aria-labelledby="form-title">
+          <div class="form-heading">
+            <span class="form-icon" aria-hidden="true">+</span>
+            <div>
+              <h2 id="form-title">Create announcement</h2>
+              <p>Share something worth knowing.</p>
+            </div>
+          </div>
+          <form id="announcement-form">
+            <label for="title">Title</label>
+            <input id="title" name="title" maxlength="140" placeholder="Give it a clear title" required />
+
+            <label for="message-input">Message</label>
+            <textarea id="message-input" name="message" rows="5" placeholder="What's the update?" required></textarea>
+
+            <label for="category">Category</label>
+            <input id="category" name="category" maxlength="60" placeholder="e.g. Events, Facilities" required />
+
+            <div class="date-fields">
+              <div>
+                <label for="date-posted">Posted</label>
+                <input id="date-posted" name="date_posted" type="date" required />
+              </div>
+              <div>
+                <label for="expiry-date">Expires</label>
+                <input id="expiry-date" name="expiry_date" type="date" required />
+              </div>
+            </div>
+
+            <p class="form-hint">Expiry must be on or after the posting date.</p>
+            <button id="submit-button" class="submit-button" type="submit">
+              <span>Publish announcement</span>
+              <span aria-hidden="true">↗</span>
+            </button>
+          </form>
+        </aside>
+      </div>
+      <footer><strong>UNIVERSITY OF SAN CARLOS</strong><span aria-hidden="true">·</span> Official campus announcements</footer>
+    </main>
+  </body>
+</html>
